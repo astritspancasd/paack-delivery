@@ -6,10 +6,6 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
     "@testing-library/user-event": "^13.2.1",
-    "@types/jest": "^27.0.1",
-    "@types/node": "^16.7.13",
-    "@types/react": "^17.0.20",
-    "@types/react-dom": "^17.0.9",
     "axios": "^0.26.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -27,7 +23,11 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test"
+    "test": "react-scripts test",
+    "format": "prettier --write **/*.{js,ts,tsx,json}",
+    "format:check": "prettier -l **/*.{js,ts,tsx,json}",
+    "lint": "eslint --fix **/*.{js,ts,tsx}  --max-warnings 0",
+    "lint:check": "eslint **/*.{js,ts,tsx} --max-warnings 0"
   },
   "eslintConfig": {
     "extends": [
@@ -47,5 +47,11 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@types/styled-components": "^5.1.24",
+    "@types/jest": "^27.0.1",
+    "@types/node": "^16.7.13",
+    "@types/react": "^17.0.20",
+    "@types/react-dom": "^17.0.9"
+  }
 }

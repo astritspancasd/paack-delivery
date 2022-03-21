@@ -1,6 +1,6 @@
-import { ActionType } from "../action-types";
-import { Action } from "../actions";
-import { IDeliveriesReducer } from "../types";
+import { ActionType } from '../action-types';
+import { Action } from '../actions';
+import { IDeliveriesReducer } from '../types';
 
 const intialState: IDeliveriesReducer = {
   deliveries: [],
@@ -8,10 +8,7 @@ const intialState: IDeliveriesReducer = {
   error: null,
 };
 
-export const deliveriesReducer = (
-  state = intialState,
-  action: Action
-) => {
+export const deliveriesReducer = (state = intialState, action: Action) => {
   switch (action.type) {
     case ActionType.FETCH_DELIVERIES_LOADING: {
       return { ...state, loading: true };

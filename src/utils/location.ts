@@ -1,4 +1,4 @@
-import { ILocation } from "../store/types";
+import { ILocation } from '../store/types';
 
 export const getCurrentLocation = async (): Promise<ILocation> => {
   return new Promise((resolve, reject) => {

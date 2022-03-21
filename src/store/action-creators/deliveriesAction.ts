@@ -1,7 +1,7 @@
-import { Dispatch } from "redux";
-import { fetchDelieveriesRequest } from "../../http";
-import { ActionType } from "../action-types";
-import { IDelivery } from "../types";
+import { Dispatch } from 'redux';
+import { fetchDelieveriesRequest } from '../../http';
+import { ActionType } from '../action-types';
+import { IDelivery } from '../types';
 
 const fetchDeliveriesLoading = () => {
   return {

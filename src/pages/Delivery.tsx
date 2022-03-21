@@ -1,21 +1,21 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 import {
   ActionButtons,
   DeliveryCard,
   Error,
   NotFound,
   Spinner,
-} from "../components";
+} from '../components';
 import {
   RootState,
   fetchDeliveryAction,
   makeDeliveryActiveAction,
   updateDeliveryStatusAction,
-  IDeliveryReducer
-} from "../store";
-import { getActiveDelivery, getCurrentLocation } from "../utils";
+  IDeliveryReducer,
+} from '../store';
+import { getActiveDelivery, getCurrentLocation } from '../utils';
 
 export const Delivery = () => {
   const { delivery, active, loading, error } = useSelector(
@@ -42,7 +42,7 @@ export const Delivery = () => {
       };
       dispatch(updateDeliveryStatusAction(delivery?.id as string, payload));
     } catch (error) {
-      alert("Failed to get location");
+      alert('Failed to get location');
     }
   };
 

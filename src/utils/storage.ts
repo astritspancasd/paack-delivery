@@ -3,7 +3,7 @@ export const addItemToLocalStorage = (name: string, value: string) => {
 };
 
 export const getItemFromLocalStorage = (name: string): string => {
-  return window.localStorage.getItem(name) || "";
+  return window.localStorage.getItem(name) || '';
 };
 
 export const removeItemFromLocalStorage = (name: string) => {

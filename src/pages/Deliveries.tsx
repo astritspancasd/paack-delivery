@@ -1,7 +1,7 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { DeliveryCard, Error, Spinner } from "../components";
-import { RootState, fetchDeliveriesAction, IDeliveriesReducer } from "../store";
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { DeliveryCard, Error, Spinner } from '../components';
+import { RootState, fetchDeliveriesAction, IDeliveriesReducer } from '../store';
 
 export const Deliveries = () => {
   const { deliveries, loading, error } = useSelector(

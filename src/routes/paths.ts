@@ -1,5 +1,5 @@
 export const paths = {
-  home: "/",
-  deliveries: "/deliveries",
-  delivery: "/delivery/:deliveryId",
+  home: '/',
+  deliveries: '/deliveries',
+  delivery: '/delivery/:deliveryId',
 };

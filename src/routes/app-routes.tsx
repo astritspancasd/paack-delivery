@@ -1,7 +1,7 @@
-import { Suspense } from "react";
-import { Routes, Route } from "react-router-dom";
-import { Spinner } from "../components/ui/Spinner";
-import { routesList } from "./routes-list";
+import { Suspense } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import { Spinner } from '../components/ui/Spinner';
+import { routesList } from './routes-list';
 
 export const AppRoutes = () => {
   return (

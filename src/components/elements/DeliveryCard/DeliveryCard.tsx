@@ -1,7 +1,7 @@
-import { FC } from "react";
-import { NavLink } from "react-router-dom";
-import { IDelivery } from "../../../store";
-import { IF } from "../../";
+import { FC } from 'react';
+import { NavLink } from 'react-router-dom';
+import { IDelivery } from '../../../store';
+import { IF } from '../../';
 
 type DeliveryCardProps = {
   delivery: IDelivery;

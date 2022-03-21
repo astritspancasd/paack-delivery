@@ -1,4 +1,4 @@
-import { ComponentType, lazy } from "react";
+import { ComponentType, lazy } from 'react';
 
 export const lazyImport = <
   T extends ComponentType<any>,

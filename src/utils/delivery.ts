@@ -1,5 +1,5 @@
-import { ACTIVE_DELIVERY } from "../constants";
-import { getItemFromLocalStorage } from "./storage";
+import { ACTIVE_DELIVERY } from '../constants';
+import { getItemFromLocalStorage } from './storage';
 
 export const isDeliveryActive = (deliveryId: string) =>
   Boolean(getItemFromLocalStorage(ACTIVE_DELIVERY) === deliveryId);

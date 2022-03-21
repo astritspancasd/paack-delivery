@@ -2,4 +2,4 @@ export {
   fetchDelieveriesRequest,
   fetchDelieveryRequest,
   updateDeliveryStatusRequest,
-} from "./requests";
+} from './requests';

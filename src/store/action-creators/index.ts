@@ -1,6 +1,6 @@
-export { fetchDeliveriesAction } from "./deliveriesAction";
+export { fetchDeliveriesAction } from './deliveriesAction';
 export {
   updateDeliveryStatusAction,
   makeDeliveryActiveAction,
-  fetchDeliveryAction
-} from "./deliveryAction";
+  fetchDeliveryAction,
+} from './deliveryAction';

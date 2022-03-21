@@ -31,12 +31,10 @@ export interface ILocation {
 }
 
 export interface IDeliveryReducer extends IReducer {
-    delivery: IDelivery | null;
-    active: boolean;
-  }
+  delivery: IDelivery | null;
+  active: boolean;
+}
 
-  
 export interface IDeliveriesReducer extends IReducer {
-    deliveries: IDelivery[];
-  }
-  
+  deliveries: IDelivery[];
+}

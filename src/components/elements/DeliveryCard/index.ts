@@ -1,1 +1,1 @@
-export { DeliveryCard } from './DeliveryCard'
+export { DeliveryCard } from './DeliveryCard';

@@ -1,14 +1,12 @@
-import { Dispatch } from "redux";
-import { ACTIVE_DELIVERY } from "../../constants";
+import { Dispatch } from 'redux';
+import { ACTIVE_DELIVERY } from '../../constants';
 import {
   fetchDelieveryRequest,
   updateDeliveryStatusRequest,
-} from "../../http/requests";
-import { addItemToLocalStorage, removeItemFromLocalStorage } from "../../utils";
-import {
-    ActionType
-} from "../action-types";
-import { IDelivery, IDeliveryDetails } from "../types";
+} from '../../http/requests';
+import { addItemToLocalStorage, removeItemFromLocalStorage } from '../../utils';
+import { ActionType } from '../action-types';
+import { IDelivery, IDeliveryDetails } from '../types';
 
 const deliveryLoading = () => {
   return {

@@ -1,7 +1,7 @@
-import { isDeliveryActive } from "../../utils";
-import { ActionType } from "../action-types";
-import { Action } from "../actions";
-import { IDeliveryReducer } from "../types";
+import { isDeliveryActive } from '../../utils';
+import { ActionType } from '../action-types';
+import { Action } from '../actions';
+import { IDeliveryReducer } from '../types';
 
 const intialState: IDeliveryReducer = {
   delivery: null,
@@ -10,10 +10,7 @@ const intialState: IDeliveryReducer = {
   error: null,
 };
 
-export const deliveryReducer = (
-  state = intialState,
-  action: Action
-) => {
+export const deliveryReducer = (state = intialState, action: Action) => {
   switch (action.type) {
     case ActionType.DELIVERY_LOADING: {
       return { ...state, loading: true };

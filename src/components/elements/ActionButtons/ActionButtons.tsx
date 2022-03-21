@@ -1,6 +1,7 @@
-import { FC } from "react";
-import { NavLink } from "react-router-dom";
-import { DELIVERED, UNDELIVERED } from "../../../constants";
+import { FC } from 'react';
+import { NavLink } from 'react-router-dom';
+import { Button } from '../../ui';
+import { DELIVERED, UNDELIVERED } from '../../../constants';
 
 type ActionButtonsProps = {
   id: string;
@@ -21,30 +22,26 @@ export const ActionButtons: FC<ActionButtonsProps> = (props) => {
 
   if (activeDelivery && activeDelivery !== id) {
     return (
-      <div>
+      <>
         <p>You can't activate this delivery as there is another one active</p>
         <NavLink to={`/delivery/${activeDelivery}`}>
           Visit active delivery
         </NavLink>
-      </div>
+      </>
     );
   }
 
   if (active) {
     return (
-      <div>
-        <button onClick={() => onUpdateDelivery(DELIVERED)}>Deliver</button>
-        <button onClick={() => onUpdateDelivery(UNDELIVERED)}>Undeliver</button>
-      </div>
+      <>
+        <Button onClick={() => onUpdateDelivery(DELIVERED)}>Deliver</Button>
+        <Button onClick={() => onUpdateDelivery(UNDELIVERED)}>Undeliver</Button>
+      </>
     );
   }
 
   if (!active || status === UNDELIVERED) {
-    return (
-      <div>
-        <button onClick={onActivate}>Make Active</button>
-      </div>
-    );
+    return <Button onClick={onActivate}>Make Active</Button>;
   }
 
   return null;

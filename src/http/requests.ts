@@ -1,6 +1,6 @@
-import { IDeliveryDetails } from "../store/types";
-import { Http } from "./http";
-import { GET, PUT } from "./methods";
+import { IDeliveryDetails } from '../store/types';
+import { Http } from './http';
+import { GET, PUT } from './methods';
 
 export const fetchDelieveriesRequest = () => {
   return Http({

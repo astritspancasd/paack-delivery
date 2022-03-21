@@ -1,5 +1,5 @@
-import { ActionType } from "../action-types";
-import { IDelivery } from "../types";
+import { ActionType } from '../action-types';
+import { IDelivery } from '../types';
 
 interface FetchDeliveriesLoadingAction {
   type: ActionType.FETCH_DELIVERIES_LOADING;
@@ -35,7 +35,7 @@ interface UpdateDeliveryStatusAction {
 }
 
 interface MakeDeliveryActiveAction {
-  type: ActionType.MAKE_DELIVERY_ACTIVE
+  type: ActionType.MAKE_DELIVERY_ACTIVE;
 }
 
 export type Action =
@@ -46,4 +46,4 @@ export type Action =
   | DeliverySuccessAction
   | DeliveryFailureAction
   | UpdateDeliveryStatusAction
-  | MakeDeliveryActiveAction
+  | MakeDeliveryActiveAction;
