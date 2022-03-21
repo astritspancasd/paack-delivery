@@ -39,6 +39,46 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
+## State Management
+
+Redux is the state management used for this project. [Redux Documentation](https://redux.js.org/)
+Redux Thunk is the middelware used for all redux operation. [Redux Thunk Documentation](https://github.com/reduxjs/redux-thunk)
+
+## Styling
+
+Styled components is used as the tool used for styling [Styled Components](https://styled-components.com/)
+
+```js
+const Button = styled.a`
+  /* This renders the buttons above... Edit me! */
+  display: inline-block;
+  border-radius: 3px;
+  padding: 0.5rem 0;
+  margin: 0.5rem 1rem;
+  width: 11rem;
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+
+  /* The GitHub button is a primary button
+   * edit this to target it specifically! */
+  ${(props) =>
+    props.primary &&
+    css`
+      background: white;
+      color: black;
+    `}
+`;
+```
+
+## Navigation
+
+React Router Dom v6 is the library used for navigation [React Router Dom](https://reactrouter.com/docs/en/v6/getting-started/overview)
+
+## Testing
+
+React Testing Library is the tool used for unit & integration testing. [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
+
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
