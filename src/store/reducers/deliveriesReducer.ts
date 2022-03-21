@@ -1,9 +1,6 @@
-import { IDelivery, IDeliveriesReducer } from "../types";
-import {
-  FETCH_DELIVERIES_FAILURE,
-  FETCH_DELIVERIES_LOADING,
-  FETCH_DELIVERIES_SUCCESS,
-} from "../action-types";
+import { ActionType } from "../action-types";
+import { Action } from "../actions";
+import { IDeliveriesReducer } from "../types";
 
 const intialState: IDeliveriesReducer = {
   deliveries: [],
@@ -13,16 +10,16 @@ const intialState: IDeliveriesReducer = {
 
 export const deliveriesReducer = (
   state = intialState,
-  action: { type: string; payload: IDelivery[] | string | undefined }
+  action: Action
 ) => {
   switch (action.type) {
-    case FETCH_DELIVERIES_LOADING: {
+    case ActionType.FETCH_DELIVERIES_LOADING: {
       return { ...state, loading: true };
     }
-    case FETCH_DELIVERIES_SUCCESS: {
+    case ActionType.FETCH_DELIVERIES_SUCCESS: {
       return { ...state, loading: false, deliveries: action.payload };
     }
-    case FETCH_DELIVERIES_FAILURE: {
+    case ActionType.FETCH_DELIVERIES_FAILURE: {
       return { ...state, loading: false, error: action.payload };
     }
   }

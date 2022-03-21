@@ -6,30 +6,26 @@ import {
 } from "../../http/requests";
 import { addItemToLocalStorage, removeItemFromLocalStorage } from "../../utils";
 import {
-  DELIVERY_LOADING,
-  DELIVERY_SUCCESS,
-  DELIVERY_FAILURE,
-  UPDATE_DELIVERY_STATUS,
-  MAKE_DELIVERY_ACTIVE,
+    ActionType
 } from "../action-types";
 import { IDelivery, IDeliveryDetails } from "../types";
 
 const deliveryLoading = () => {
   return {
-    type: DELIVERY_LOADING,
+    type: ActionType.DELIVERY_LOADING,
   };
 };
 
 const deliverySuccess = (deliveries: IDelivery) => {
   return {
-    type: DELIVERY_SUCCESS,
+    type: ActionType.DELIVERY_SUCCESS,
     payload: deliveries,
   };
 };
 
 const deliveryFailure = (error: string) => {
   return {
-    type: DELIVERY_FAILURE,
+    type: ActionType.DELIVERY_FAILURE,
     payload: error,
   };
 };
@@ -48,14 +44,14 @@ export const fetchDeliveryAction = (deliveryId: string) => {
 
 export const updateDeliveryStatus = (delivery: IDelivery) => {
   return {
-    type: UPDATE_DELIVERY_STATUS,
+    type: ActionType.UPDATE_DELIVERY_STATUS,
     payload: delivery,
   };
 };
 
 const makeDeliveryActive = () => {
   return {
-    type: MAKE_DELIVERY_ACTIVE,
+    type: ActionType.MAKE_DELIVERY_ACTIVE,
   };
 };
 

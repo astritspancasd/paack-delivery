@@ -1,28 +1,24 @@
 import { Dispatch } from "redux";
 import { fetchDelieveriesRequest } from "../../http";
-import {
-  FETCH_DELIVERIES_LOADING,
-  FETCH_DELIVERIES_SUCCESS,
-  FETCH_DELIVERIES_FAILURE,
-} from "../action-types";
+import { ActionType } from "../action-types";
 import { IDelivery } from "../types";
 
 const fetchDeliveriesLoading = () => {
   return {
-    type: FETCH_DELIVERIES_LOADING,
+    type: ActionType.FETCH_DELIVERIES_LOADING,
   };
 };
 
 const fetchDeliveriesSuccess = (deliveries: IDelivery[]) => {
   return {
-    type: FETCH_DELIVERIES_SUCCESS,
+    type: ActionType.FETCH_DELIVERIES_SUCCESS,
     payload: deliveries,
   };
 };
 
 const fetchDeliveriesFailure = (error: string) => {
   return {
-    type: FETCH_DELIVERIES_FAILURE,
+    type: ActionType.FETCH_DELIVERIES_FAILURE,
     payload: error,
   };
 };
