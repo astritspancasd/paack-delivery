@@ -49,6 +49,8 @@ Redux Thunk is the middelware used for all redux operation. [Redux Thunk Documen
 Styled components is used as the tool used for styling [Styled Components](https://styled-components.com/)
 
 ```js
+// styled button
+
 const Button = styled.a`
   /* This renders the buttons above... Edit me! */
   display: inline-block;
@@ -138,6 +140,15 @@ import axios from "axios";
 export const Http = axios.create({
   baseURL: process.env.REACT_APP_BASE_URL,
 });
+
+// example request
+
+export const fetchDelieveryRequest = (deliveryId: string) => {
+  return Http({
+    method: GET,
+    url: `/deliveries/${deliveryId}`,
+  });
+};
 ```
 
 ## Testing
@@ -146,6 +157,7 @@ React Testing Library is the tool used for unit & integration testing. [React Te
 
 ```js
 // __tests__
+
 import { ActionButtons } from "../ActionButtons";
 import "@testing-library/jest-dom/extend-expect";
 import { render } from "@testing-library/react";
@@ -192,6 +204,8 @@ it("renders null when status is delivered", () => {
 To mock all the redux state management beahvior Redux Mock Store is the tool used [Redux Mock Store](https://github.com/reduxjs/redux-mock-store)
 
 ```js
+// __tests__
+
 import { render } from "@testing-library/react";
 import { Provider } from "react-redux";
 import { BrowserRouter as Router } from "react-router-dom";
