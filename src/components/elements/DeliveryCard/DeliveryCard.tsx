@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { NavLink } from "react-router-dom";
-import { IDelivery } from "../../../store/types";
-import { IF } from "../../others/IF";
+import { IDelivery } from "../../../store";
+import { IF } from "../../";
 
 type DeliveryCardProps = {
   delivery: IDelivery;
@@ -16,7 +16,6 @@ export const DeliveryCard: FC<DeliveryCardProps> = (props) => {
     <div>
       <div>Id: {id}</div>
       <div>Client: {client}</div>
-      <div>Delivery status: {delivery.status}</div>
       <div>Customer name: {customer.name}</div>
       <div>Customer address: {customer.address}</div>
       <div>Delivery Status: {delivery.status}</div>

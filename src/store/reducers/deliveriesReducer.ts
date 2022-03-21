@@ -1,13 +1,9 @@
-import { IDelivery, IReducer } from "../types";
+import { IDelivery, IDeliveriesReducer } from "../types";
 import {
   FETCH_DELIVERIES_FAILURE,
   FETCH_DELIVERIES_LOADING,
   FETCH_DELIVERIES_SUCCESS,
 } from "../action-types";
-
-export interface IDeliveriesReducer extends IReducer {
-  deliveries: IDelivery[];
-}
 
 const intialState: IDeliveriesReducer = {
   deliveries: [],

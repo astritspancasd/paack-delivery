@@ -1,17 +1,12 @@
-import { isDeliveryActive } from "../../utils/delivery";
+import { isDeliveryActive } from "../../utils";
 import {
-  FETCH_DELIVERY_LOADING,
-  FETCH_DELIVERY_SUCCESS,
-  FETCH_DELIVERY_FAILURE,
+  DELIVERY_LOADING,
+  DELIVERY_SUCCESS,
+  DELIVERY_FAILURE,
   UPDATE_DELIVERY_STATUS,
   MAKE_DELIVERY_ACTIVE,
 } from "../action-types";
-import { IDelivery, IReducer } from "../types";
-
-export interface IDeliveryReducer extends IReducer {
-  delivery: IDelivery | null;
-  active: boolean;
-}
+import { IDelivery, IDeliveryReducer } from "../types";
 
 const intialState: IDeliveryReducer = {
   delivery: null,
@@ -25,10 +20,10 @@ export const deliveryReducer = (
   action: { type: string; payload: IDelivery }
 ) => {
   switch (action.type) {
-    case FETCH_DELIVERY_LOADING: {
+    case DELIVERY_LOADING: {
       return { ...state, loading: true };
     }
-    case FETCH_DELIVERY_SUCCESS: {
+    case DELIVERY_SUCCESS: {
       return {
         ...state,
         loading: false,
@@ -36,7 +31,7 @@ export const deliveryReducer = (
         active: isDeliveryActive(action.payload.id),
       };
     }
-    case FETCH_DELIVERY_FAILURE: {
+    case DELIVERY_FAILURE: {
       return { ...state, loading: false, error: action.payload };
     }
     case UPDATE_DELIVERY_STATUS: {

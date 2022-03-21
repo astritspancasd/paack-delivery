@@ -1,5 +1,5 @@
 import { Dispatch } from "redux";
-import { fetchDelieveriesRequest } from "../../http/requests";
+import { fetchDelieveriesRequest } from "../../http";
 import {
   FETCH_DELIVERIES_LOADING,
   FETCH_DELIVERIES_SUCCESS,
@@ -27,7 +27,7 @@ const fetchDeliveriesFailure = (error: string) => {
   };
 };
 
-export const fetchDeliveries = () => {
+export const fetchDeliveriesAction = () => {
   return async (dispatch: Dispatch) => {
     dispatch(fetchDeliveriesLoading());
     try {

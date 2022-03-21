@@ -4,47 +4,44 @@ import {
   fetchDelieveryRequest,
   updateDeliveryStatusRequest,
 } from "../../http/requests";
+import { addItemToLocalStorage, removeItemFromLocalStorage } from "../../utils";
 import {
-  addItemToLocalStorage,
-  removeItemFromLocalStorage,
-} from "../../utils/storage";
-import {
-  FETCH_DELIVERY_LOADING,
-  FETCH_DELIVERY_SUCCESS,
-  FETCH_DELIVERY_FAILURE,
+  DELIVERY_LOADING,
+  DELIVERY_SUCCESS,
+  DELIVERY_FAILURE,
   UPDATE_DELIVERY_STATUS,
   MAKE_DELIVERY_ACTIVE,
 } from "../action-types";
 import { IDelivery, IDeliveryDetails } from "../types";
 
-const fetchDeliveryLoading = () => {
+const deliveryLoading = () => {
   return {
-    type: FETCH_DELIVERY_LOADING,
+    type: DELIVERY_LOADING,
   };
 };
 
-const fetchDeliverySuccess = (deliveries: IDelivery) => {
+const deliverySuccess = (deliveries: IDelivery) => {
   return {
-    type: FETCH_DELIVERY_SUCCESS,
+    type: DELIVERY_SUCCESS,
     payload: deliveries,
   };
 };
 
-const fetchDeliveryFailure = (error: string) => {
+const deliveryFailure = (error: string) => {
   return {
-    type: FETCH_DELIVERY_FAILURE,
+    type: DELIVERY_FAILURE,
     payload: error,
   };
 };
 
-export const fetchDelivery = (deliveryId: string) => {
+export const fetchDeliveryAction = (deliveryId: string) => {
   return async (dispatch: Dispatch) => {
-    dispatch(fetchDeliveryLoading());
+    dispatch(deliveryLoading());
     try {
       const response = await fetchDelieveryRequest(deliveryId);
-      dispatch(fetchDeliverySuccess(response.data));
+      dispatch(deliverySuccess(response.data));
     } catch (error: any) {
-      dispatch(fetchDeliveryFailure(error.response.data as string));
+      dispatch(deliveryFailure(error.response.data as string));
     }
   };
 };
@@ -74,13 +71,13 @@ export const updateDeliveryStatusAction = (
   payload: { delivery: IDeliveryDetails }
 ) => {
   return async (dispatch: Dispatch) => {
-    dispatch(fetchDeliveryLoading());
+    dispatch(deliveryLoading());
     try {
       const response = await updateDeliveryStatusRequest(deliveryId, payload);
       dispatch(updateDeliveryStatus(response.data));
       removeItemFromLocalStorage(ACTIVE_DELIVERY);
     } catch (error: any) {
-      dispatch(fetchDeliveryFailure(error.response.data as string));
+      dispatch(deliveryFailure(error.response.data as string));
     }
   };
 };

@@ -1,9 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { DeliveryCard } from "../components/elements/DeliveryCard/DeliveryCard";
-import { RootState } from "../store";
-import { fetchDeliveries } from "../store/actions/deliveriesAction";
-import { IDeliveriesReducer } from "../store/reducers/deliveriesReducer";
+import { DeliveryCard, Error, Spinner } from "../components";
+import { RootState, fetchDeliveriesAction, IDeliveriesReducer } from "../store";
 
 export const Deliveries = () => {
   const { deliveries, loading, error } = useSelector(
@@ -12,11 +10,11 @@ export const Deliveries = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchDeliveries());
+    dispatch(fetchDeliveriesAction());
   }, [dispatch]);
 
-  if (error) return <div>{error}</div>;
-  if (loading) return <div>Loading...</div>;
+  if (error) return <Error />;
+  if (loading) return <Spinner />;
 
   return (
     <div data-testid="deliveries-page">

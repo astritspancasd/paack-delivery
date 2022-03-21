@@ -1,17 +1,21 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { ActionButtons } from "../components/elements/ActionButtons/ActionButtons";
-import { DeliveryCard } from "../components/elements/DeliveryCard/DeliveryCard";
-import { RootState } from "../store";
 import {
-  fetchDelivery,
+  ActionButtons,
+  DeliveryCard,
+  Error,
+  NotFound,
+  Spinner,
+} from "../components";
+import {
+  RootState,
+  fetchDeliveryAction,
   makeDeliveryActiveAction,
   updateDeliveryStatusAction,
-} from "../store/actions/deliveryAction";
-import { IDeliveryReducer } from "../store/reducers/deliveryReducer";
-import { getActiveDelivery } from "../utils/delivery";
-import { getCurrentLocation } from "../utils/location";
+  IDeliveryReducer
+} from "../store";
+import { getActiveDelivery, getCurrentLocation } from "../utils";
 
 export const Delivery = () => {
   const { delivery, active, loading, error } = useSelector(
@@ -22,7 +26,7 @@ export const Delivery = () => {
 
   useEffect(() => {
     if (deliveryId) {
-      dispatch(fetchDelivery(deliveryId));
+      dispatch(fetchDeliveryAction(deliveryId));
     }
   }, [deliveryId, dispatch]);
 
@@ -48,9 +52,9 @@ export const Delivery = () => {
 
   const activeDelivery = getActiveDelivery();
 
-  if (error) return <div>{error}</div>;
-  if (loading) return <div>Loading...</div>;
-  if (!delivery) return <div>Loading...</div>;
+  if (error) return <Error />;
+  if (loading) return <Spinner />;
+  if (!delivery) return <NotFound />;
 
   return (
     <div data-testid="delivery-page">
