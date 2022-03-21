@@ -75,10 +75,17 @@ const Button = styled.a`
 
 React Router Dom v6 is the library used for navigation [React Router Dom](https://reactrouter.com/docs/en/v6/getting-started/overview)
 
+## HTTP Client
+
+Axios is the library used for HTTP Client [Axios](https://github.com/axios/axios)
+
 ## Testing
 
 React Testing Library is the tool used for unit & integration testing. [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
 
+## Mocking Store
+
+To mock all the redux state management beahvior Redux Mock Store is the tool used [Redux Mock Store](https://github.com/reduxjs/redux-mock-store)
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
